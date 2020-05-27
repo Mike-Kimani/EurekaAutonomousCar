@@ -26,3 +26,14 @@ while True:
     high_green = np.array([102, 255, 255])
     green_mask = cv2.inRange(hsv_frame, low_green, high_green)
     green = cv2.bitwise_and(frame, frame, mask=green_mask)
+
+    cv2.imshow('frame',frame)
+    cv2.imshow('red',red)
+    cv2.imshow('orange',orange)
+    cv2.imshow('green',green)
+
+    if cv2.waitKey(1) & 0xFF == ord('q'):
+        break
+
+cap.release()
+cv2.destroyAllWindows()
